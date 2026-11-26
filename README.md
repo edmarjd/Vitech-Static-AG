@@ -21,7 +21,8 @@ python3 sweep_tabelas.py --imagem Kodak/kodim12.png --comprimir
 Faz o sweep **nessa imagem**, gera as tabelas pelo rANS, recompila e comprime/verifica com o
 `./encoder` (≈2 s na Kodak, ≈13 s numa imagem do DIV2K). Veja *Tabelas ideais por imagem (sweep)*.
 
-**Com as tabelas que já estão compiladas** (as da Kodak 19):
+**Com as tabelas que vêm no repositório** (as da Kodak 19; se você já rodou o sweep, restaure-as antes
+com `git checkout modelos_planos.json tans_tables.h`):
 
 ```bash
 gcc -O2 Encoder_Ans.c -o encoder -lm -lz      # compila (letra O em -O2; precisa da zlib)
@@ -92,6 +93,9 @@ imagem a comprimir ──► sweep_tabelas.py ──► modelos_planos.json
 pip install numpy opencv-python matplotlib
 sudo apt install zlib1g-dev        # se o gcc reclamar de zlib.h
 ```
+
+As imagens **não** estão no git: coloque o Kodak (`kodim01.png` a `kodim24.png`) em `Kodak/` e, se for
+usar, o DIV2K em `DIV2K/`.
 
 O Python só é necessário para **gerar as tabelas** (rANS) e para o sweep. Para comprimir imagens basta o C.
 
@@ -180,9 +184,17 @@ python3 sweep_tabelas.py --imagem Kodak/kodim12.png --comprimir
 # busca extensa (~22.500 modelos por plano; ~20 s na Kodak)
 python3 sweep_tabelas.py --imagem Kodak/kodim12.png --extenso --comprimir
 
-# só gerar as tabelas e recompilar / só ver o resultado
+# só gerar as tabelas e recompilar / só o sweep (grava modelos_planos.json, sem gerar tabelas)
 python3 sweep_tabelas.py --imagem Kodak/kodim12.png --aplicar
 python3 sweep_tabelas.py --imagem Kodak/kodim12.png
+```
+
+Todos os modos **sobrescrevem `modelos_planos.json`** (e, com `--aplicar`/`--comprimir`, o
+`tans_tables.h`). Para voltar às tabelas da Kodak 19 que vêm no repositório:
+
+```bash
+git checkout modelos_planos.json tans_tables.h
+gcc -O2 Encoder_Ans.c -o encoder -lm -lz && gcc -O2 Decoder.c -o decoder
 ```
 
 | Modo | Modelos por plano | Kodak (393 mil símbolos/plano) | DIV2K 0001 (2,9 milhões) |
@@ -296,7 +308,7 @@ arquivo.
 | COMPRIMIDO GLOBAL | Overhead + preenchimento + estado + bitstream |
 | GANHO TOTAL | Original − comprimido (negativo se o arquivo cresceu) |
 | TAXA DE COMPRESSAO | (1 − comprimido / original) × 100 |
-| TEMPO ENCODER / DECODER | Uma execução, incluindo leitura e escrita de arquivos |
+| TEMPO ENCODER / DECODER | Só o tANS (no `./encoder` com PNG, sem leitura da imagem nem gravação do `.bin`) |
 | VERIFICACAO LOSSLESS | `OK` quando o plano decodificado é idêntico ao original |
 
 ---
@@ -316,7 +328,7 @@ Projeto-ANS-main/
 ├── ANS-Streaming-Decoder.py   Decoder Python
 ├── Bit_Planes.py              Separa a imagem em planos e codifica com o rANS em Python
 ├── .clang-format              Estilo do código C (K&R)
-├── Kodak/                     kodim01.png a kodim24.png
+├── Kodak/                     kodim01.png a kodim24.png (fora do git)
 ├── DIV2K/                     0001.png a 0800.png (fora do git)
 └── comprimidos/               Saída do ./encoder com imagens (fora do git)
 ```
