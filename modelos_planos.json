@@ -1,0 +1,69 @@
+{
+  "origem": "Kodak/kodim19.png",
+  "planos": {
+    "0": {
+      "L": 864,
+      "M": 27,
+      "f0": 13,
+      "p0_real": 0.486628,
+      "bits_original": 393216,
+      "bits_comprimido": 393080
+    },
+    "1": {
+      "L": 3424,
+      "M": 107,
+      "f0": 54,
+      "p0_real": 0.506383,
+      "bits_original": 393216,
+      "bits_comprimido": 393232
+    },
+    "2": {
+      "L": 2,
+      "M": 2,
+      "f0": 1,
+      "p0_real": 0.501615,
+      "bits_original": 393216,
+      "bits_comprimido": 393264
+    },
+    "3": {
+      "L": 3712,
+      "M": 116,
+      "f0": 57,
+      "p0_real": 0.493935,
+      "bits_original": 393216,
+      "bits_comprimido": 393248
+    },
+    "4": {
+      "L": 46,
+      "M": 23,
+      "f0": 9,
+      "p0_real": 0.45252,
+      "bits_original": 393216,
+      "bits_comprimido": 389240
+    },
+    "5": {
+      "L": 206,
+      "M": 103,
+      "f0": 41,
+      "p0_real": 0.502261,
+      "bits_original": 393216,
+      "bits_comprimido": 393152
+    },
+    "6": {
+      "L": 14,
+      "M": 7,
+      "f0": 2,
+      "p0_real": 0.342812,
+      "bits_original": 393216,
+      "bits_comprimido": 342928
+    },
+    "7": {
+      "L": 22,
+      "M": 11,
+      "f0": 7,
+      "p0_real": 0.676928,
+      "bits_original": 393216,
+      "bits_comprimido": 328440
+    }
+  }
+}

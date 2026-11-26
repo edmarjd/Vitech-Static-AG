@@ -1,0 +1,16 @@
+comprimidos/
+decoder
+DIV2K/
+encoder
+plano_bit_*_encoded.bin
+plano_bit_*.txt
+__pycache__/
+resultado_planos_bits.png
+saida_*.txt
+sweep_custo.so
+
+**/DIV2K/
+**/Kodak/
+**/kodak/
+*.bin
+*.so

@@ -1,0 +1,18 @@
+# Estilo do código C do projeto: K&R (chave da função na linha de baixo; de if/for/while/
+# struct na mesma linha), chaves sempre presentes,
+# 4 espaços de indentação, um comando por linha.
+# Formatar:  clang-format -i Encoder_Ans.c Decoder.c tans_codec.h
+BasedOnStyle: LLVM
+IndentWidth: 4
+ColumnLimit: 100
+BreakBeforeBraces: Linux
+InsertBraces: true
+IndentCaseLabels: true
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: None
+AllowShortBlocksOnASingleLine: Never
+AllowShortCaseLabelsOnASingleLine: false
+AlignTrailingComments: true
+SortIncludes: Never
+ReflowComments: false
